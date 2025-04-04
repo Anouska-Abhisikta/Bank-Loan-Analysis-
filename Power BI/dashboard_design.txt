@@ -1,0 +1,138 @@
+// Power BI Dashboard Design for Bank Loan Analysis
+// This file describes the design and implementation of the Power BI dashboard
+
+// Dashboard Structure
+// The dashboard will consist of three main pages:
+// 1. Summary Dashboard - Key metrics and high-level overview
+// 2. Loan Analysis Dashboard - Detailed analysis by various dimensions
+// 3. Regional Analysis Dashboard - Geographical distribution and state-level metrics
+
+// ===== SUMMARY DASHBOARD =====
+
+// Key Performance Indicators (KPIs) Section
+// - Total Loan Applications (Card visual)
+// - Total Funded Amount (Card visual with $ format)
+// - Total Amount Received (Card visual with $ format)
+// - Average Interest Rate (Card visual with % format)
+// - Average DTI (Card visual with % format)
+
+// Loan Status Overview Section
+// - Loan Status Distribution (Donut chart)
+//   Data: loan_status.csv
+//   Values: Total_Loans
+//   Legend: loan_status
+
+// Monthly Trends Section
+// - Monthly Loan Applications (Line chart)
+//   Data: monthly_trends.csv
+//   X-axis: Month
+//   Y-axis: Total_Applications
+// - Monthly Funded Amount (Line chart)
+//   Data: monthly_trends.csv
+//   X-axis: Month
+//   Y-axis: Total_Funded_Amount
+
+// Loan Purpose Section
+// - Loan Purpose Distribution (Bar chart)
+//   Data: purpose_analysis.csv
+//   Y-axis: purpose
+//   X-axis: Total_Applications
+//   Sort: Descending by Total_Applications
+
+// ===== LOAN ANALYSIS DASHBOARD =====
+
+// Loan Term Analysis Section
+// - Loan Term Distribution (Column chart)
+//   Data: loan_term.csv
+//   X-axis: term
+//   Y-axis: Total_Applications
+
+// Grade Analysis Section
+// - Grade Distribution (Column chart)
+//   Data: grade_analysis.csv
+//   X-axis: grade
+//   Y-axis: Total_Applications
+// - Grade Default Rate (Line chart)
+//   Data: grade_analysis.csv
+//   X-axis: grade
+//   Y-axis: Default_Rate
+
+// Home Ownership Section
+// - Home Ownership Distribution (Treemap)
+//   Data: home_ownership.csv
+//   Group: home_ownership
+//   Values: Total_Applications
+
+// Employment Length Section
+// - Employment Length Distribution (Bar chart)
+//   Data: employment_length.csv
+//   Y-axis: emp_length
+//   X-axis: Total_Applications
+//   Sort: Custom (to maintain chronological order)
+
+// Income Range Section
+// - Income Range Distribution (Column chart)
+//   Data: income_range.csv
+//   X-axis: Income_Range
+//   Y-axis: Total_Applications
+// - Income Range Default Rate (Line chart)
+//   Data: income_range.csv
+//   X-axis: Income_Range
+//   Y-axis: Default_Rate
+
+// ===== REGIONAL ANALYSIS DASHBOARD =====
+
+// State Analysis Section
+// - State Loan Distribution (Map visual)
+//   Data: regional_analysis.csv
+//   Location: State
+//   Bubble size: Total_Applications
+//   Color saturation: Default_Rate
+
+// Top States Section
+// - Top 10 States by Loan Applications (Bar chart)
+//   Data: regional_analysis.csv
+//   Y-axis: State
+//   X-axis: Total_Applications
+//   Sort: Descending by Total_Applications
+//   Top N filter: 10
+
+// State Metrics Table
+// - Detailed State Metrics (Table visual)
+//   Data: regional_analysis.csv
+//   Columns: State, Total_Applications, Total_Funded_Amount, Total_Amount_Received, Avg_Interest_Rate, Default_Rate
+//   Sort: Descending by Total_Applications
+
+// ===== DASHBOARD INTERACTIVITY =====
+
+// Slicers and Filters
+// - Loan Status filter (applies to all pages)
+// - Date Range filter (applies to all pages)
+// - Purpose filter (applies to all pages)
+// - Grade filter (applies to Loan Analysis page)
+
+// Cross-filtering
+// - Enable cross-filtering between visuals on the same page
+// - Clicking on a state in the map highlights related data in other visuals
+
+// Drill-through
+// - Enable drill-through from Summary to Loan Analysis page
+// - Enable drill-through from Regional Analysis to state-specific details
+
+// ===== DASHBOARD THEME AND FORMATTING =====
+
+// Color Scheme
+// - Primary: #0078D4 (Blue)
+// - Secondary: #107C10 (Green)
+// - Accent: #D83B01 (Orange)
+// - Neutral: #505050 (Dark Gray)
+
+// Typography
+// - Title: Segoe UI, 18pt, Bold
+// - Subtitle: Segoe UI, 14pt, Semibold
+// - Body: Segoe UI, 10pt, Regular
+
+// Layout
+// - Grid-based layout with consistent spacing
+// - Clear section headers
+// - Responsive design for different screen sizes
